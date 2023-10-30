@@ -1,1 +1,1 @@
-Exercicios do site LeetCode feitos em python
+Exercicios do site LeetCode feitos em python.
