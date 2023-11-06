@@ -7,7 +7,7 @@ class Solution(object):
         # Coloca toda a string s com letras maiúsculas, caso o usuário coloque em minúsculas
         su = s.upper() 
         
-        # Definindo um dicionário 
+        # Dicionário  
         roman_values = {
             'I' : 1,
             'V' : 5,
@@ -17,7 +17,8 @@ class Solution(object):
             'D' : 500,
             'M' : 1000
         }
-        # Diz o dígito de cada letra correspondente. Ex: 'X' retorna 10.
+        
+        # Retorna o dígito de cada letra correspondente. Ex: 'X' retorna 10.
         def convertToInt(su):
             return roman_values[su]
 
