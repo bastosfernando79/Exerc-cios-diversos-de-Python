@@ -4,30 +4,37 @@
 '''
 class Solution(object):
     def romanToInt(self, s):
-      # Definindo um dicionário 
-      valores_romanos = {
-        'I' : 1,
-        'V' : 5,
-        'X' : 10,
-        'L' : 50,
-        'C' : 100,
-        'D' : 500,
-        'M' : 1000
-    }
+        # Coloca toda a string s com letras maiúsculas, caso o usuário coloque em minúsculas
+        su = s.upper() 
+        
+        # Definindo um dicionário 
+        roman_values = {
+            'I' : 1,
+            'V' : 5,
+            'X' : 10,
+            'L' : 50,
+            'C' : 100,
+            'D' : 500,
+            'M' : 1000
+        }
         # Diz o dígito de cada letra correspondente. Ex: 'X' retorna 10.
-        def convertToInt(s):
-            return valores_romanos[s]
+        def convertToInt(su):
+            return roman_values[su]
 
         # Usa o map para criar uma lista de cada um dos valores correspondentes. Ex: 'XXI' retorna [10, 10, 1]
-        valores = list(map(convertToInt, s))  
+        values = list(map(convertToInt, su))  
         decimal = 0
         
-        for i in range(len(valores) - 1):
-            if valores[i] < valores[i+1]:
-                decimal -= valores[i]
+        for i in range(len(values) - 1):
+            if values[i] < values[i+1]:
+                decimal -= values[i]
             else:
-                decimal += valores[i]
+                decimal += values[i]
         
-        decimal += valores[-1]        
+        decimal += values[-1]        
         
         return decimal
+    
+s = "XxIi"
+ans = Solution().romanToInt(s)
+print(ans)
